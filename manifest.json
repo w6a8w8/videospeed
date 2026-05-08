@@ -22,8 +22,8 @@
    "background":{
       "scripts":[
          "src/background.js"
-      ]
-      "type": "module"
+      ],
+      "type":"module"
    },
    "options_ui":{
       "page":"ui/options/options.html",
