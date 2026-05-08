@@ -3,7 +3,6 @@
   "short_name": "videospeed",
   "version": "0.0.0",
   "manifest_version": 3,
-  "minimum_chrome_version": "111",
   "description": "Speed up, slow down, advance and rewind HTML5 audio/video with shortcuts",
   "homepage_url": "https://github.com/igrigorik/videospeed",
   "icons": {
@@ -11,15 +10,15 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
-    "browser_specific_settings": {
-    "gecko": {
-      "id": "{12eacda6-ea12-501a-05e9-6a787452e6b7}"
-    }
-  },
+   "browser_specific_settings": {
+  "gecko": {
+    "id": "@videospeedWkjasdkjasu",
+    "strict_min_version": "109.0"
+  }
+},
   "permissions": ["storage"],
   "background": {
     "scripts": ["src/background.js"],
-    "service_worker": "background.js"
   },
   "options_ui": {
     "page": "ui/options/options.html",
