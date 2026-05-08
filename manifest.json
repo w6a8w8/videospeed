@@ -13,7 +13,7 @@
    "browser_specific_settings":{
       "gecko":{
          "id":"@videospeedWkjasdkjasu",
-         "strict_min_version":"109.0"
+         "strict_min_version":"112.0"
       }
    },
    "permissions":[
@@ -23,6 +23,7 @@
       "scripts":[
          "src/background.js"
       ]
+      "type": "module"
    },
    "options_ui":{
       "page":"ui/options/options.html",
