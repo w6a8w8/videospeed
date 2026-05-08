@@ -11,8 +11,14 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "{12eacda6-ea12-501a-05e9-6a787452e6b7}"
+    }
+  },
   "permissions": ["storage"],
   "background": {
+    "scripts": ["src/background.js"],
     "service_worker": "background.js"
   },
   "options_ui": {
