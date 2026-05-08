@@ -23,9 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initialize enabled state
-  chrome.storage.sync.get({ enabled: true }, (storage) => {
-    toggleEnabledUI(storage.enabled);
-  });
+ chrome.storage.sync.get({ enabled: true }, (storage) => {
+  if (chrome.runtime.lastError) {
+    console.error('[VSC] popup storage read failed:', chrome.runtime.lastError.message);
+    return;
+  }
+  toggleEnabledUI(storage.enabled);
+});
 
   function toggleEnabled(enabled, callback) {
     chrome.storage.sync.set(
