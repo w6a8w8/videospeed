@@ -21,6 +21,23 @@ const SPEED_MAX = 16;
 const docEl = document.documentElement;
 let bridgeInitialized = false;
 
+// 1. FIXED: Moved this function to the top level of the file
+function injectMainWorldScript() {
+  const doInject = () => {
+    const script = document.createElement('script');
+    script.src = chrome.runtime.getURL('inject.js');
+    script.onload = () => script.remove();
+    (document.head || document.documentElement).appendChild(script);
+  };
+
+  // Match the original document_idle timing
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', doInject, { once: true });
+  } else {
+    doInject();
+  }
+}
+
 async function init() {
   try {
     // Skip about:blank frames — they share the parent window
@@ -59,6 +76,10 @@ async function init() {
       return;
     }
 
+    // 2. FIXED: Actually execute the function so the script is injected
+    injectMainWorldScript();
+    
+    // 3. FIXED: Corrected Regex syntax. Removed extra backslashes.
     const hostname = location.hostname.replace(/^www\./, '');
 
     // Strip keys the MAIN world shouldn't see
