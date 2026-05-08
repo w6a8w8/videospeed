@@ -26,7 +26,7 @@
       "type":"module"
    },
    "options_ui":{
-      "page":"ui/options/options.html",
+      "page":"src/ui/options/options.html",
       "open_in_tab":true
    },
    "action":{
@@ -35,7 +35,7 @@
          "38":"assets/icons/icon38.png",
          "48":"assets/icons/icon48.png"
       },
-      "default_popup":"ui/popup/popup.html"
+      "default_popup":"src/ui/popup/popup.html"
    },
    "content_scripts":[
       {
